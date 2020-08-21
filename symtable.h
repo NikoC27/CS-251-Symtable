@@ -163,7 +163,7 @@ public:
 	if(MyScopes.empty())  // Throw error when no scope is currently open
 		throw runtime_error("symtable::curScope: empty");
 	
-    return MyScopes.front();  // Return the front of the deque
+   	return MyScopes.front();  // Return the front of the deque
 	
   } // End of curScope()
 
@@ -293,10 +293,10 @@ public:
   //
   void dump(ostream& output, ScopeOption option = ScopeOption::ALL) const
   {
-		output << "**************************************************" << endl;
+	output << "**************************************************" << endl;
 
 	/* Checks the key and symbol pairs in every scope of the deque and prints */
-    if (option == ScopeOption::ALL)
+   	if (option == ScopeOption::ALL)
 	{
 		output << "*************** SYMBOL TABLE (ALL) ***************" << endl;
 		// Print # of open scopes
@@ -324,7 +324,7 @@ public:
 		// Print # of open scopes
 		output << "** # of scopes: " << this->numscopes() << endl;
 		// Print # of symbols
-        output << "** # of symbols: " << this->size() << endl;
+        	output << "** # of symbols: " << this->size() << endl;
 		// Print name of CURRENT scope
 		output << "** " << MyScopes.front().Name << " **" << endl;
 		
@@ -336,7 +336,7 @@ public:
 			  
 	}
     /* Checks the key and symbol pairs in the global scope and prints */
-    else 
+    	else 
 	{
 		output << "*************** SYMBOL TABLE (GBL) ***************" << endl;
 		// Print # of open scopes
@@ -353,7 +353,9 @@ public:
 		}
 			  
 	}
-		output << "**************************************************" << endl;
+	  
+	output << "**************************************************" << endl;
+	  
   }  // End of dump()
 
 }; // End of symtable
